@@ -1,0 +1,390 @@
+/*Todos los estilos o técnincas que fueron usados en el obligatorio y no se dieron en clase, están implicitos en los comentarios con sus respectivos links, así mismo las técnicas que no se explican a detalle como los padding, background, justify, etc, se puede asumir que se explicaron en clase y están en los PDF */
+
+
+.contenedor-general {
+   max-width: 1280px;
+  width: 80%;
+  margin: 0 auto; /*Para que quede centrado*/
+}
+
+
+.barra-superior {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 1px 1px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+header.encabezado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.logo {
+  width: 100px;     
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%; 
+}
+
+.menu-navegacion {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  position: absolute;
+  left: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.carrito {
+  position: absolute;
+  right: 20px;    /*top 50% lo ubica en la mitad del contenedor padre, translate lo sube a la mitad de su propia altura*/
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carrito-icono {
+  width: 30px;
+  height: auto;
+}
+
+ul.menu-navegacion li a {
+  font-family: 'SF Pro Text', 'Inter', 'Helvetica Neue', sans-serif;
+  color: white;
+  text-decoration: none; /*Para eliminar el subrayado en las secciones del encabezado y quedar "más limpio"*/
+}
+
+.carrito-separado {
+  padding-left: 100px;
+}
+/* El carrusel tiene base en CHATGPT y luego fue adptado y editado por el alumno como velocidad, fuentes, tamaño, etc */
+.carrusel-texto {
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgb(0, 0, 0);
+  font-family: 'Arial Black', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.texto-track {
+  display: inline-block;
+  animation: scroll-text 35s linear infinite; /*La velocidad en pasar todos los <span>*/
+}
+
+.texto-track span {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.fondo-principal {
+  background-image: url('../img/fondopersonas\ ChatGTP\ Image.png');
+  background-size: cover; /*Hace que la imagen cubra todo el fondo del contenedor*/
+  background-position: center; 
+  background-repeat: no-repeat;
+  height: 100vh;  /*Si no se usa height 100vh, el fondo de la imagen abarca solo donde hay texto*/
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; 
+}
+
+.fondo-principal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.contenedor-titulo {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.palabra-nuevo,
+.palabra-producto {
+  font-size: 60px;
+  margin: 0;
+}
+
+.palabra-nuevo {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resaltado {
+  color: rgb(207, 207, 207);
+  position: relative;
+  font-weight: 900;
+  z-index: 2;
+}
+/* Efecto visual con ::after inspirado en técnicas de CSS avanzadas, el contenido base se obtuvo en https://css-tricks.com/, el estudiante la adaptó */
+.resaltado::after {
+  content: 'HUØKY';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: #97111c;
+  z-index: -1;
+}
+
+.palabra-producto {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+
+.titulo-descripcion {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.catalogo {
+  text-emphasis: none;
+}
+
+.nosotros-presentacion {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nosotros-presentacion .img {
+  width: 100%;
+  display: block;
+  border-radius: 5px; /*Redondea de las esquinas*/
+  border-radius: 5px
+}
+
+.texto-encima {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.caja-modelo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  transform: scale(1);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.caja-modelo img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.5s ease, transform 1s ease; 
+  display: block;
+}
+
+.img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+/*La img hover es la imagen que aparece de sustiuyendo a la que esta antes de poner el cursor por encima, se uso https://uiverse.io* como base para lograrlo*/
+.caja-modelo:hover .img-hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.caja-modelo:hover .img-normal {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.descripcion-modelo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #111;
+}
+
+.tarjeta-producto {
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: relative;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 20px auto;
+}
+
+.tarjeta-producto img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.ahorro { /*Tarjetas de ahorro inspiradas en https://www.shein.com/ y https://www.zara.com/uy/*/
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #E11D48 ;
+  color: #F9FAFB ;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 5px; /*Redondea de las esquinas*/
+}
+
+.nombre-producto {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 15px 0 5px;
+}
+
+.precios {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.precio-actual {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.precio-original {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+.fila-productos {
+  display: flex; /*Para que los objetos se queden en fila horizontal, sino el 3ro, (#ICON) queda por debajo*/
+  justify-content: center;
+  gap: 60px;   /* espacio entre productos */
+  margin-top: 60px;
+}
+
+.contenedor-producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Diseño de la caja de opiniones así como el diseño del formulario fueron sacadas de https://uiverse.io/ */
+
+.formulario-contacto {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+.opiniones {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid-opiniones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.opinion {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.foto-usuario {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.formulario-contacto label {
+  font-weight: 600;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.formulario-contacto button {
+  padding: 12px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #333;
+}
