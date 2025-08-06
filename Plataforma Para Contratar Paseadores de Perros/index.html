@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plataforma de Paseadores</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div id="contenedor">
+      <!-- HEADER -->
+      <header>
+        <img id="logo" src="https://p1.develotion.com/logo.jpg" alt="logo" />
+        <nav>
+          <ul id="navPrincipal">
+            <!-- LOGOUT PARA AMBOS -->
+            <li>
+              <a href="#" id="btnLogout">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- FIN HEADER -->
+      <!-- CONTENIDO PRINCIPAL -->
+      <main>
+        <!-- FORMULARIO LOGIN -->
+        <form id="formLogin" onsubmit="return false;">
+          <div id="divLogin">
+            <!-- INPUT USUARIO LOGIN -->
+            <label for="txtLoginUsuario">Usuario:</label><br />
+            <input type="text" value="max90" id="txtLoginUsuario" /><br />
+
+            <!-- INPUT PASSWORD LOGIN -->
+            <label for="txtLoginPassword">Contraseña:</label><br />
+            <input
+              type="password"
+              value="Max90word"
+              id="txtLoginPassword"
+            /><br />
+
+            <p id="pErroresLogin"></p>
+
+            <a href="#" id="btnRegistrase">Registrarse como usuario</a
+            ><br /><br />
+
+            <button id="btnLogin" type="button">Ingresar</button>
+          </div>
+        </form>
+
+        <!-- FORMULARIO REGISTRO USUARIO -->
+        <form id="formRegistro" onsubmit="return false;">
+          <div id="divRegistro">
+            <!-- INPUT NOMBRE DE USUARIO -->
+            <label for="txtRegistroUsuarioNombre">Nombre de usuario:</label
+            ><br />
+            <input
+              type="text"
+              id="txtRegistroUsuarioNombre"
+              autocomplete="username"
+            /><br />
+
+            <!-- INPUT NOMBRE PERRO -->
+            <label for="txtRegistroNombrePerro">Nombre del perro:</label><br />
+            <input type="text" id="txtRegistroNombrePerro" /><br />
+
+            <!-- SELECT TAMAÑO -->
+            <select id="slcTamanioPerro" style="display: block">
+              <option value="x">Seleccione tamaño de su perro</option>
+              <option value="chico">Pequeño (1 a 15 KG)</option>
+              <option value="mediano">Mediano (15 a 30 KG)</option>
+              <option value="grande">Grande (más de 30 KG)</option></select
+            ><br />
+
+            <!-- INPUT MAIL -->
+            <label for="txtRegistroUsuarioMail">Email:</label><br />
+            <input
+              type="email"
+              id="txtRegistroUsuarioMail"
+              autocomplete="email"
+            /><br />
+
+            <!-- INPUT PASSWORD -->
+            <label for="txtRegistroUsuarioPass">Contraseña:</label><br />
+            <input
+              type="password"
+              id="txtRegistroUsuarioPass"
+              autocomplete="new-password"
+            /><br />
+
+            <p id="pErroresRegistro"></p>
+
+            <button id="btnRegistro" type="button">Registrarse</button>
+
+            <button id="btnCancelarRegistro" type="button">
+              Volver al login
+            </button>
+          </div>
+        </form>
+        <!-- FIN FORMULARIO REGISTRO USUARIO -->
+
+        <!-- INICIO PÁGINA DEL USUARIO -->
+        <div id="divPaginaUsuario" class="pagina-usuario">
+          <button id="btnVerPaseadoresDisponibles" style="display: block">
+            Ver Paseadores Disponibles
+          </button>
+
+          <!-- INICIO TABLA PASEADORES -->
+          <table id="tablaPaseadores" style="display: none">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cupos disponibles</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <button id="btnVerResumenPaseadores">
+            Ver resumen de paseadores
+          </button>
+
+          <!-- INICIO TABLA PERROS POR PASEADOR-->
+          <table id="tablaResumenPaseadores" style="display: none">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad de perros asignados</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <!-- FIN TABLA PERROS POR PASEADOR-->
+
+          <button id="btnCancelarContratacionPendiente" style="display: none">
+            Cancelar Contratación
+          </button>
+<button id="btnVerPaseadoresDisponiblePorTamanio">Ver Paseadores por Tamanio</button>
+          <button id="btnVerEstadoContratacion" style="display: block">
+            Ver estado de contratación
+          </button>
+
+          <p id="pEstadoContratacion"></p>
+        </div>
+        <!-- FIN PÁGINA DEL USUARIO -->
+
+        <!-- INICIO PÁGINA DEL PASEADOR -->
+        <div id="divPaginaPaseador" class="pagina-paseador">
+          <button id="btnVerContratacionesPendientesClientes">
+            Ver contrataciones pendientes
+          </button>
+
+          <!-- INICIO TABLA SOLICITDUES -->
+          <table id="tablaSolicitudes" style="display: none">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <!-- FIN TABLA SOLICITUDES -->
+
+          <!-- INICIO TABLA PERROS ASIGNADOS -->
+          <table id="tablaPerrosAsignados" style="display: none">
+            <thead>
+              <tr>
+                <th>Nombre del perro</th>
+                <th>Tamaño</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <!-- FIN TABLA PERROS ASIGNADOS -->
+
+          <p id="infoCupos"></p>
+          <p id="sinPerrosAsignados" style="display: none">
+            No hay perros asignados actualmente.
+          </p>
+          <button id="btnVerPerrosAsignados">Ver perros asignados</button>
+          <button id="btnVerRechazadas">Ver rechazadas</button>
+        </div>
+        <!-- FIN PAGINA DEL PASEADOR -->
+      </main>
+      <!-- FIN CONTENIDO PRINCIPAL-->
+
+      <!-- PIE DE PÁGINA -->
+      <footer>
+        <a href="https://www.ort.edu.uy">Footer</a>
+      </footer>
+    </div>
+    <!-- FIN PIE DE PÁGINA -->
+
+    <!-- SCRIPTS (orden correcto) -->
+    <script src="js/clases.js"></script>
+    <script src="js/sistema.js"></script>
+    <script src="js/codigo.js"></script>
+  </body>
+</html>
